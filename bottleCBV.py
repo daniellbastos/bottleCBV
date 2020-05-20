@@ -130,7 +130,7 @@ class route(object):
         This is useful for items such as checking if a user exists, such as this example:
           Request: GET /user/12403
           Response: (status code) 404 - Not Found
-        
+
         If you are closely following the REST standard, you can also verify if the requested PATCH (update) was
         successfully applied, in this example:
           Request: PUT /user/12404 { "name": "John"}
@@ -147,7 +147,7 @@ class route(object):
     def any(rule):
         """
         From the Bottle Documentation:
-          
+
         The non-standard ANY method works as a low priority fallback: Routes that listen to ANY will match requests
         regardless of their HTTP method but only if no other more specific route is defined. This is helpful for
         proxy-routes that redirect requests to more specific sub-applications.
@@ -182,7 +182,6 @@ class BottleView(object):
         cls._app = app
         cls.route_prefix = route_prefix or cls.route_prefix
         cls.base_route = base_route or cls.base_route
-        # import ipdb; ipdb.set_trace()
         # get all the valid members of  the class to register Endpoints
         routes = cls._get_interesting_members(BottleView)
 
@@ -191,7 +190,6 @@ class BottleView(object):
 
         # Iterate through class members to register Endpoints
         for func_name, func in routes:
-            # print "*"*50
 
             method_args = inspect.getargspec(func)[0]
             # Get
@@ -245,8 +243,6 @@ class BottleView(object):
 
                     cls._app.route(callback=callable_method, path=rule,
                                    method=method, name=endpoint, **options)
-
-            print ("%s : %s, Endpoint: %s" % (method, rule, endpoint))
 
     @classmethod
     def _build_route_rule(cls, func_name, *method_args):
