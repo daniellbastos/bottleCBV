@@ -8,7 +8,7 @@ from setuptools import setup
 
 setup(
     name='BottleCBV',
-    version='0.1',
+    version='0.2',
     url='https://github.com/techchunks/bottleCBV',
     license='BSD',
     author='Technology Chunks',
@@ -24,7 +24,9 @@ setup(
     ],
     keywords=['bottle', 'bottlepy', 'class-based-view'],
     classifiers=[
-        "Programming Language :: Python",
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.8',
         "Development Status :: 4 - Beta",
         "Environment :: Other Environment",
         "Intended Audience :: Developers",

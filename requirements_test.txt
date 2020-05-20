@@ -1,0 +1,4 @@
+WebTest==2.0.35
+pytest==5.4.2
+pytest-cov==2.8.1
+tox==2.7.0
